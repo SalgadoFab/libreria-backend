@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 
 //Creamos el esquema de los datos del usuario 
 const schemaLibros = new mongoose.Schema({
+
+    //Falta estado, colocar a requerid a campos que deben ser unicos
+
     nombreLibro: { type: String, required: true },
     isbn: { type: String, required: true },
     nombreAutor: { type: String, required: true },
@@ -22,16 +25,6 @@ const schemaLibros = new mongoose.Schema({
 
 
 /*
-    Tipos de Indentificacion: Definidos por el usuario
-    Genero: 
-        1 : Masculino
-        2 : Femenino 
-        3 : Indefinido
-
-    Rol:
-        1 : Clientes - Rol por defecto para cualquier registro de usuario
-        2 : Administrador 
-
     Estado:
         1 : Activo - Por Defecto
         2 : Inactivo  
