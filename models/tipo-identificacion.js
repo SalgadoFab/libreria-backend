@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 
 //Creamos el esquema de los datos del usuario 
 const tiposIdentificacion = new mongoose.Schema({
-    nombreIdentificacion: { type: String, required: true },
     codigoIdentificacion: { type: Number, required: true, unique: true },
+    nombreIdentificacion: { type: String, required: true, unique: true  },
     digitos: { type: Number, required: true }
 });
 
