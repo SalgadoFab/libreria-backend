@@ -12,4 +12,4 @@ const tiposIdentificacion = new mongoose.Schema({
 
 //Conversion del esquema al modelo
 //Parametros recibidos: (Nombre del Modelo ,  Nombre del Esquema  , Coleccion de Datos en DB )
-module.exports = mongoose.model('Identificacion', tiposIdentificacion, 'identificacion');
+module.exports = mongoose.model('Identificacion', tiposIdentificacion, 'identificacion'); 
