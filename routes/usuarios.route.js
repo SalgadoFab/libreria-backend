@@ -19,6 +19,7 @@ router.post('/registrar-usuario', (request, response) => {
         distrito : request.body.distrito,
         genero : request.body.genero,
         rol : 2,
+        estado : 1,
         correo : request.body.correo,
         password : request.body.password,
     });

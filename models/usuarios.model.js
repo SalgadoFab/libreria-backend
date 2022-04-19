@@ -17,6 +17,7 @@ const schemaUsuario = new mongoose.Schema({
     direccion : {type : String, required:true},
     genero : {type: Number, required: true},
     rol : {type: Number, required: true},
+    estado : {type: Number, required: true},
     correo : {type : String, required:true, unique: true},
     password : {type : String, required:true},
 });
@@ -32,6 +33,10 @@ const schemaUsuario = new mongoose.Schema({
     Rol:
         1 : Clientes - Rol por defecto para cualquier registro de usuario
         2 : Administrador 
+
+    Estado:
+        1 : Activo - Por Defecto
+        2 : Inactivo  
 
 */
 

@@ -54,3 +54,6 @@ function handleError(res, reason, message, code) {
 
 // Conexión a todas la rutas.
 app.use('/api', require('./routes/usuarios.route')); //Rutas de Usuarios
+app.use('/api', require('./routes/autores.route')); //Rutas de Autores
+app.use('/api', require('./routes/generos-literarios.route')); //Rutas de Generos
+app.use('/api', require('./routes/puntos-retiro.route')); //Rutas de Puntos de Retiro
