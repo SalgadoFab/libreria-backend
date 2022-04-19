@@ -1,4 +1,5 @@
 'use strict';
+//Arreglar campos mal copiados
 
 const express = require('express'); //Importamos la libreria Express para tener acceso a protocolos http
 const router = express.Router(); //Define los endpoints para el manejo de datos
