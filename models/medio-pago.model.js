@@ -13,15 +13,6 @@ const schemaMedioPago = new mongoose.Schema({
 
 
 /*
-    Tipos de Indentificacion: Definidos por el usuario
-    Genero: 
-        1 : Masculino
-        2 : Femenino 
-        3 : Indefinido
-
-    Rol:
-        1 : Clientes - Rol por defecto para cualquier registro de usuario
-        2 : Administrador 
 
     Estado:
         1 : Activo - Por Defecto
