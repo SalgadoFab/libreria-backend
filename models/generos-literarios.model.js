@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 
 //Creamos el esquema de los datos de Géneros Literarios
 const schemaGeneros = new mongoose.Schema({
-    nombreGenero: { type: String, required: true },
-    codigoGenero: { type: String, required: true },
+    codigoGenero: { type: Number, required: true, unique: true },
+    nombreGenero: { type: String, required: true, unique: true },
     estado: { type: Number, required: true },
 });
 
