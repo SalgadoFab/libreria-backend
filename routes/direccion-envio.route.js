@@ -2,12 +2,12 @@
 
 const express = require('express'); //Importamos la libreria Express para tener acceso a protocolos http
 const router = express.Router(); //Define los endpoints para el manejo de datos
-const Usuario = require('../models/direccion-envio.model') //Importamos el modelo de dirección de envio
+const DireccionEnvio = require('../models/direccion-envio.model') //Importamos el modelo de dirección de envio
 
 //Endpoints
 router.post('/añadir-direccion-envio', (request, response) => {
     //Obtenemos los datos del la direccion de envio que vienen en el request 
-    let nuevaDireccionEnvio = new Socio({
+    let nuevaDireccionEnvio = new DireccionEnvio({
         nombre: request.body.nombreSocio,
         imgSocio: request.body.fotoSocio,
         direccion: request.body.direccion,

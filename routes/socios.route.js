@@ -2,7 +2,7 @@
 
 const express = require('express'); //Importamos la libreria Express para tener acceso a protocolos http
 const router = express.Router(); //Define los endpoints para el manejo de datos
-const Usuario = require('../models/socios.model') //Importamos el modelo del usuario
+const Socio = require('../models/socios.model') //Importamos el modelo del usuario
 
 //Endpoints
 router.post('/registrar-socio', (request, response) => {

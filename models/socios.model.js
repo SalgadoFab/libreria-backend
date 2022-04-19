@@ -3,7 +3,7 @@
 //Importantamos la libreria de mongoose
 const mongoose = require('mongoose');
 
-//Creamos el esquema de los datos del usuario 
+//Creamos el esquema de los datos del socio
 const schemaSocio = new mongoose.Schema({
     nombre: { type: String, required: true },
     imgSocio: { type: Image, required: true },
