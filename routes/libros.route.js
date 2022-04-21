@@ -41,9 +41,35 @@ router.post('/registrar-libro', (request, response) => {
     });
 }); //Ruta para registrar un libro
 
-router.get('/obtener-libros', (request, response) => {}); //Ruta para obtener todos los usuario
+router.get('/obtener-libros', (request, response) => {
+    Libro.find((error, lista) => {
+        if (error) {
+            response.json({
+                msj: 'No se pudo listar libros',
+                error
+            });
+        } else {
+            response.json({
+                lista
+            });
+        }
+    });
+}); //Ruta para obtener todos los usuario
 
-router.get('/obtener-libro', (request, response) => {}); //Ruta para obtener un solo usuario
+router.get('/obtener-libro', (request, response) => {
+    Libro.find((error, lista) => {
+        if (error) {
+            response.json({
+                msj: 'No se pudo listar libros',
+                error
+            });
+        } else {
+            response.json({
+                lista
+            });
+        }
+    });
+}); //Ruta para obtener un solo usuario
 
 router.put('/actualizar-libro', (request, response) => {}); //Ruta para actualizar usuario
 
