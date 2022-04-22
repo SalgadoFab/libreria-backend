@@ -1,0 +1,11 @@
+GMAIL:
+correo: grupo.nolimits.solutions@gmail.com
+pass: NoLimits2022
+
+
+IMPORTATNE - Hacer login con la cuenta de GOOGLE -
+
+Credenciales de MongoDB
+USER DB: admin
+PASS: 1234
+StringConnection: mongodb+srv://admin:1234@cluster0.w5lzi.mongodb.net/libreriadb?retryWrites=true&w=majority
