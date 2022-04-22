@@ -30,9 +30,35 @@ router.post('/medios-pago', (request, response) => {
     });
 }); //Ruta para registrar un medio de pago
 
-router.get('/obtener-mediosPago', (request, response) => {}); //Ruta para obtener todos los medios de pago
+router.get('/obtener-mediosPago', (request, response) => {
+    MediosPago.find((error, lista) => {
+        if (error) {
+            response.json({
+                msj: 'No se pudo listar medios de pago',
+                error
+            });
+        } else {
+            response.json({
+                lista
+            });
+        }
+    });
+}); //Ruta para obtener todos los medios de pago
 
-router.get('/obtener-medioPago', (request, response) => {}); //Ruta para obtener un solo medio de pago
+router.get('/obtener-medioPago', (request, response) => {
+    MedioPago.find((error, lista) => {
+        if (error) {
+            response.json({
+                msj: 'No se pudo listar medios de pago',
+                error
+            });
+        } else {
+            response.json({
+                lista
+            });
+        }
+    });
+}); //Ruta para obtener un solo medio de pago
 
 router.put('/actualizar-medioPago', (request, response) => {}); //Ruta para actualizar medio de pago
 
