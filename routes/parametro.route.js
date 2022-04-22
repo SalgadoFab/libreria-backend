@@ -5,30 +5,14 @@ const router = express.Router(); //Define los endpoints para el manejo de datos
 const Usuario = require('../models/usuarios.model') //Importamos el modelo del usuario
 
 //Endpoints
-router.post('/registrar-parametros', (request, response) => {
+router.post('/registrar-parametros-Cantidad-Minima-LibroFan', (request, response) => {
     //Obtenemos los datos del parametro que vienen en el request 
-    let nuevoParametroCantidadMinimaLibroFan = new Usuario({
-        cantidadActual: request.body.cantidadActual,
-        nuevaCantidad: request.body.nuevaCantidad
-    });
-
-    let nuevoParametroPrecioActualPorEnvio = new Usuario({
-        precioActual: request.body.precioActual,
-        nuevaPrecio: request.body.nuevaPrecio
-    });
-
-    let nuevoParametroTarifaImpuestoAplicado = new Usuario({
-        tarifaActual: request.body.tarifaActual,
-        nuevaTarifa: request.body.nuevaTarifa
-    });
-
-    let nuevoParametroTarifaDescuentoLibroFan = new Usuario({
-        descuentoActual: request.body.descuentoActual,
-        nuevaDescuento: request.body.nuevaDescuento
+    let CantidadMinimaLibroFan = new Usuario({
+        Cantidad: request.body.Cantidad
     });
 
     //Guardamos los parametros
-    nuevoParametroCantidadMinimaLibroFan.save((error) => {
+    CantidadMinimaLibroFan.save((error) => {
         if (error) {
             response.json({
                 mensaje: 'Error al registrar la cantidad minima',
@@ -40,8 +24,16 @@ router.post('/registrar-parametros', (request, response) => {
             })
         }
     });
+}); //Ruta para registrar parametros cantidad minima librofan
 
-    nuevoParametroPrecioActualPorEnvio.save((error) => {
+router.post('/registrar-parametros-Precio-Actual-Por-Envio', (request, response) => {
+    //Obtenemos los datos del parametro que vienen en el request 
+    let PrecioActualPorEnvio = new Usuario({
+        Precio: request.body.Precio
+    });
+
+    //Guardamos los parametros
+    PrecioActualPorEnvio.save((error) => {
         if (error) {
             response.json({
                 mensaje: 'Error al registrar el precio',
@@ -53,8 +45,16 @@ router.post('/registrar-parametros', (request, response) => {
             })
         }
     });
+}); //Ruta para registrar parametros precio actual por envio
 
-    nuevoParametroTarifaImpuestoAplicado.save((error) => {
+router.post('/registrar-parametros-Tarifa-Impuesto-Aplicado', (request, response) => {
+    //Obtenemos los datos del parametro que vienen en el request 
+    let TarifaImpuestoAplicado = new Usuario({
+        Cantidad: request.body.Cantidad
+    });
+
+    //Guardamos los parametros
+    TarifaImpuestoAplicado.save((error) => {
         if (error) {
             response.json({
                 mensaje: 'Error al registrar la tarifa de impuesto',
@@ -66,8 +66,16 @@ router.post('/registrar-parametros', (request, response) => {
             })
         }
     });
+}); //Ruta para registrar parametros cantidad minima librofan
 
-    nuevoParametroTarifaDescuentoLibroFan.save((error) => {
+router.post('/registrar-parametros-Tarifa-Descuento-LibroFan', (request, response) => {
+    //Obtenemos los datos del parametro que vienen en el request 
+    let TarifaDescuentoLibroFan = new Usuario({
+        Descuento: request.body.Descuento
+    });
+
+    //Guardamos los parametros
+    TarifaDescuentoLibroFan.save((error) => {
         if (error) {
             response.json({
                 mensaje: 'Error al registrar la tarifa de descuento',
@@ -79,7 +87,7 @@ router.post('/registrar-parametros', (request, response) => {
             })
         }
     });
-}); //Ruta para registrar un parametros
+}); //Ruta para registrar parametros cantidad minima librofan
 
 router.get('/obtener-parametros', (request, response) => {}); //Ruta para obtener todos los parametros
 
