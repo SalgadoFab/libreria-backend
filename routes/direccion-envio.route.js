@@ -8,12 +8,10 @@ const DireccionEnvio = require('../models/direccion-envio.model') //Importamos e
 router.post('/añadir-direccion-envio', (request, response) => {
     //Obtenemos los datos del la direccion de envio que vienen en el request 
     let nuevaDireccionEnvio = new DireccionEnvio({
-        nombre: request.body.nombreSocio,
-        imgSocio: request.body.fotoSocio,
+        provincia: request.body.provincia,
+        canton: request.body.canton,
+        distrito: request.body.distrito,
         direccion: request.body.direccion,
-        telefono: request.body.telefono,
-        correo: request.body.correo,
-
     });
 
     //Guardamos la direccion de envio
