@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 //Creamos el esquema de los datos del usuario 
 const schemaLibros = new mongoose.Schema({
 
-    //Falta estado, colocar a requerid a campos que deben ser unicos
+    //Falta estado, colocar a unique a campos que deben ser unicos
 
     nombreLibro: { type: String, required: true },
     isbn: { type: String, required: true },
