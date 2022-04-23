@@ -9,21 +9,19 @@ const Libro = require('../models/libros.model') //Importamos el modelo del libro
 router.post('/registrar-libro', (request, response) => {
     //Obtenemos los datos del libro que vienen en el request 
     let nuevoLibro = new Libro({
+
         nombreLibro: request.body.nombreLibro,
         isbn: request.body.isbn,
         nombreAutor: request.body.nombreAutor,
-        formatoLibro: request.body.formatoLibro,
         idiomaLibro: request.body.idiomaLibro,
         fechaPublicacion: request.body.fechaPublicacion,
         generoLibro: request.body.generoLibro,
         premios: request.body.premios,
         precio: request.body.precio,
         libroStock: request.body.libroStock,
-        rol: 2,
-        estado: 1,
-        libroStock: request.body.libroStock,
         descuento: request.body.descuento,
         resennaLibro: request.body.resennaLibro,
+        estado: 1,
     });
 
     //Guardamos el libro
@@ -54,7 +52,7 @@ router.get('/obtener-libros', (request, response) => {
             });
         }
     });
-}); //Ruta para obtener todos los usuario
+}); //Ruta para obtener todos libros
 
 router.get('/obtener-libro', (request, response) => {
     Libro.find((error, lista) => {

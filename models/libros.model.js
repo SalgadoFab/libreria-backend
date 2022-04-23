@@ -9,9 +9,8 @@ const schemaLibros = new mongoose.Schema({
     //Falta estado, colocar a requerid a campos que deben ser unicos
 
     nombreLibro: { type: String, required: true },
-    isbn: { type: String, required: true },
+    isbn: { type: String, required: true, unique: true },
     nombreAutor: { type: String, required: true },
-    formatoLibro: { type: String, required: true },
     idiomaLibro: { type: String, required: true, unique: true },
     fechaPublicacion: { type: Date, required: true },
     generoLibro: { type: String, required: true },
@@ -20,6 +19,7 @@ const schemaLibros = new mongoose.Schema({
     libroStock: { type: Boolean, required: true },
     descuento: { type: Number, required: true },
     resennaLibro: { type: String, required: true },
+    estado: { type: Number, required: true },
 
 });
 
