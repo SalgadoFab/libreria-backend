@@ -8,13 +8,13 @@ const Socio = require('../models/socios.model') //Importamos el modelo del socio
 router.post('/registrar-socio', (request, response) => {
     //Obtenemos los datos del socio comercial que vienen en el request 
     let nuevoSocio = new Socio({
-        nombre: request.body.nombreSocio,
-        imgSocio: request.body.fotoSocio,
+        nombre: request.body.nombre,
+        //imgSocio: request.body.fotoSocio,
         direccion: request.body.direccion,
         telefono: request.body.telefono,
         correo: request.body.correo,
         codigo: request.body.codigo,
-        estado: request.body.estado,
+        estado: 1,
 
     });
 
