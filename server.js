@@ -57,3 +57,5 @@ app.use('/api', require('./routes/usuarios.route')); //Rutas de Usuarios
 app.use('/api', require('./routes/autores.route')); //Rutas de Autores
 app.use('/api', require('./routes/generos-literarios.route')); //Rutas de Generos
 app.use('/api', require('./routes/puntos-retiro.route')); //Rutas de Puntos de Retiro
+app.use('/api', require('./routes/libros.route')); //Rutas de libros
+app.use('/api', require('./routes/medio-pago.route')); //Rutas de medio de pago
