@@ -15,4 +15,4 @@ const schemaMedioPago = new mongoose.Schema({
 
 //Conversion del esquema al modelo
 //Parametros recibidos: (Nombre del Modelo ,  Nombre del Esquema  , Coleccion de Datos en DB )
-module.exports = mongoose.model('MedioPago', schemaUsuario, 'mediosPago');
+module.exports = mongoose.model('MedioPago', schemaMedioPago, 'mediosPago');
