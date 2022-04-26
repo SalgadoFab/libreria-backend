@@ -28,6 +28,7 @@ router.post('/registrar-socio', (request, response) => {
             })
         }
     });
+    
 }); //Ruta para registrar un socio comercial
 
 router.get('/obtener-socios', (request, response) => {}); //Ruta para obtener todos los socios comerciales
