@@ -1,4 +1,4 @@
-'use strict';
+'use strict ';
 
 const express = require('express'); //Importamos la libreria Express para tener acceso a protocolos http
 const router = express.Router(); //Define los endpoints para el manejo de datos
@@ -6,7 +6,7 @@ const MedioPago = require('../models/medio-pago.model') //Importamos el modelo d
 
 //Endpoints
 router.post('/medios-pago', (request, response) => {
-    //Obtenemos los datos del libro que vienen en el request 
+    //Obtenemos los datos del Medio que vienen en el request 
     let nuevoMedioPago = new MedioPago({
         numeroTarjeta: request.body.numeroTarjeta,
         nombreTitular: request.body.nombreTitular,
@@ -30,8 +30,8 @@ router.post('/medios-pago', (request, response) => {
     });
 }); //Ruta para registrar un medio de pago
 
-router.get('/obtener-mediosPago', (request, response) => {
-    MediosPago.find((error, lista) => {
+router.get('/obtener-medios-pago', (request, response) => {
+    MedioPago.find((error, lista) => {
         if (error) {
             response.json({
                 msj: 'No se pudo listar medios de pago',
@@ -45,7 +45,7 @@ router.get('/obtener-mediosPago', (request, response) => {
     });
 }); //Ruta para obtener todos los medios de pago
 
-router.get('/obtener-medioPago', (request, response) => {
+router.get('/obtener-medio-pago', (request, response) => {
     MedioPago.find((error, lista) => {
         if (error) {
             response.json({
@@ -60,9 +60,9 @@ router.get('/obtener-medioPago', (request, response) => {
     });
 }); //Ruta para obtener un solo medio de pago
 
-router.put('/actualizar-medioPago', (request, response) => {}); //Ruta para actualizar medio de pago
+router.put('/actualizar-medio-pago', (request, response) => {}); //Ruta para actualizar medio de pago
 
-router.delete('/eliminar-medioPago', (request, response) => {}); //Ruta para eliminar medio de pago
+router.delete('/eliminar-medio-pago', (request, response) => {}); //Ruta para eliminar medio de pago
 
 
 //Middleware

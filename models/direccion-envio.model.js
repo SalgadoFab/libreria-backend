@@ -3,7 +3,7 @@
 //Importantamos la libreria de mongoose
 const mongoose = require('mongoose');
 
-//Creamos el esquema de los datos del usuario 
+//Creamos el esquema de los datos de direccion de envio
 const schemaDireccionEnvio = new mongoose.Schema({
     provincia: { type: String, required: true },
     canton: { type: String, required: true },
