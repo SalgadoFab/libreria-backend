@@ -59,3 +59,5 @@ app.use('/api', require('./routes/generos-literarios.route')); //Rutas de Genero
 app.use('/api', require('./routes/puntos-retiro.route')); //Rutas de Puntos de Retiro
 app.use('/api', require('./routes/libros.route')); //Rutas de libros
 app.use('/api', require('./routes/medio-pago.route')); //Rutas de medio de pago
+app.use('/api', require('./routes/direccion-envio.route')); //Rutas de direccion de envio
+app.use('/api', require('./routes/socios.route')); //Rutas de Socio comercial
