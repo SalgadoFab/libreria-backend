@@ -10,6 +10,7 @@ const schemaDireccionEnvio = new mongoose.Schema({
     distrito: { type: String, required: true },
     direccion: { type: String, required: true },
     //direccion en mapa pendiente
+    estado: { type: Number, required: true },
 });
 
 //Conversion del esquema al modelo
