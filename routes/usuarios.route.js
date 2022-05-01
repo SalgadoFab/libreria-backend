@@ -1,7 +1,6 @@
 'use strict';
 
 const express = require('express'); //Importamos la libreria Express para tener acceso a protocolos http
-const res = require('express/lib/response');
 const router = express.Router(); //Define los endpoints para el manejo de datos
 const Usuario = require('../models/usuarios.model') //Importamos el modelo del usuario
 
@@ -13,17 +12,17 @@ router.post('/registrar-usuario', (request, response) => {
         segundoNombre: request.body.segundoNombre,
         primerApellido: request.body.primerApellido,
         segundoApellido: request.body.segundoApellido,
-        tipoIndentificacion: request.body.tipoIndentificacion,
-        indentificacion: request.body.indentificacion,
+        tipoIdentificacion: request.body.tipoIdentificacion,
+        identificacion: request.body.identificacion,
         provincia: request.body.provincia,
         canton: request.body.canton,
         distrito: request.body.distrito,
+        direccion: request.body.direccion,
         genero: request.body.genero,
         correo: request.body.correo,
         password: request.body.password,
         rol: 2,
         estado: 1,
-
     });
 
     //Guardamos el usuario
@@ -45,13 +44,13 @@ router.get('/obtener-usuarios', (request, response) => {
 
     Usuario.find((error, lista) => {
         if (error) {
-            res.json({
+            response.json({
                 msj: 'no se pudo consultar el listado de usuarios',
                 error
 
             });
         } else {
-            res.json({
+            response.json({
                 msj: 'usuarios listados correctamente',
                 lista
             });
@@ -59,11 +58,9 @@ router.get('/obtener-usuarios', (request, response) => {
         }
 
     });
-
-
-
 });
 //Ruta para obtener todos los usuario
+
 
 router.get('/obtener-usuario', (request, response) => {}); //Ruta para obtener un solo usuario
 

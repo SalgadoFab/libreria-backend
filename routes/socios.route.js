@@ -31,7 +31,25 @@ router.post('/registrar-socio', (request, response) => {
     
 }); //Ruta para registrar un socio comercial
 
-router.get('/obtener-socios', (request, response) => {}); //Ruta para obtener todos los socios comerciales
+router.get('/obtener-socios', (request, response) => {
+    Socio.find((error, lista) => {
+        if (error) {
+            response.json({
+                msj: 'no se pudo consultar el listado de usuarios',
+                error
+
+            });
+        } else {
+            response.json({
+                msj: 'usuarios listados correctamente',
+                lista
+            });
+
+        }
+
+    });
+}); //Ruta para obtener todos los socios comerciales
+
 router.get('/obtener-socio', (request, response) => {}); //Ruta para obtener un solo socio comercial
 router.put('/actualizar-socio', (request, response) => {}); //Ruta para actualizar socio comercial
 router.delete('/eliminar-socio', (request, response) => {}); //Ruta para eliminar socio comercial

@@ -34,7 +34,20 @@ router.post('/registrar-autor', (request, response) => {
     });
 }); //Ruta para registrar un autor
 
-router.get('/obtener-autores', (request, response) => {}); //Ruta para obtener todos los autores
+router.get('/obtener-autores', (request, response) => {
+    autor.find((error, lista) => {
+        if (error) {
+            response.json({
+                msj: 'No se pudo listar libros',
+                error
+            });
+        } else {
+            response.json({
+                lista
+            });
+        }
+    });
+}); //Ruta para obtener todos los autores
 
 router.get('/obtener-autor', (request, response) => {}); //Ruta para obtener un solo autor
 
