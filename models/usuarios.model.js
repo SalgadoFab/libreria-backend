@@ -5,21 +5,21 @@ const mongoose = require('mongoose');
 
 //Creamos el esquema de los datos del usuario 
 const schemaUsuario = new mongoose.Schema({
-    primerNombre : {type: String, required:true},
-    segundoNombre : {type: String, required:true},
-    primerApellido : {type: String, required:true},
-    segundoApellido : {type: String, required:true},
-    tipoIndentificacion : {type : Number, required:true},
-    indentificacion : {type : String, required:true, unique: true},
-    provincia : {type : String, required:true},
-    canton : {type : String, required:true},
-    distrito : {type : String, required:true},
-    direccion : {type : String, required:true},
-    genero : {type: Number, required: true},
-    rol : {type: Number, required: true},
-    estado : {type: Number, required: true},
-    correo : {type : String, required:true, unique: true},
-    password : {type : String, required:true},
+    primerNombre: { type: String, required: true },
+    segundoNombre: { type: String, required: true },
+    primerApellido: { type: String, required: true },
+    segundoApellido: { type: String, required: true },
+    tipoIdentificacion: { type: String, required: true },
+    identificacion: { type: String, required: true, unique: true },
+    provincia: { type: String, required: true },
+    canton: { type: String, required: true },
+    distrito: { type: String, required: true },
+    direccion: { type: String, required: true },
+    genero: { type: Number, required: true },
+    correo: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    rol: { type: Number, required: true },
+    estado: { type: Number, required: true }
 });
 
 
@@ -30,9 +30,9 @@ const schemaUsuario = new mongoose.Schema({
         2 : Femenino 
         3 : Indefinido
 
-    Rol:
-        1 : Clientes - Rol por defecto para cualquier registro de usuario
-        2 : Administrador 
+    Rol: 
+        1 : Admin
+        2 : Cliente
 
     Estado:
         1 : Activo - Por Defecto
@@ -42,4 +42,4 @@ const schemaUsuario = new mongoose.Schema({
 
 //Conversion del esquema al modelo
 //Parametros recibidos: (Nombre del Modelo ,  Nombre del Esquema  , Coleccion de Datos en DB )
-module.exports = mongoose.model('Usuario', schemaUsuario, 'usuarios');
+module.exports = mongoose.model('Usuario', schemaUsuario, 'Usuarios');

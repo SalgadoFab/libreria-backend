@@ -12,6 +12,7 @@ router.post('/registrar-direccion-envio', (request, response) => {
         canton: request.body.canton,
         distrito: request.body.distrito,
         direccion: request.body.direccion,
+        estado: 1,
     });
 
     //Guardamos la direccion de envio
