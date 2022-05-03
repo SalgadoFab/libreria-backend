@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 //Creamos el esquema de los datos del autor 
 const schemaAutor = new mongoose.Schema({
     nombreAutor: { type: String, required: true },
+    foto: { type: String, required: false },
     nacimiento: { type: Date, required: true },
     defuncion: { type: Date, required: false },
     nacionalidad: { type: String, required: true },

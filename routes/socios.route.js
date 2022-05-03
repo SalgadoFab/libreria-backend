@@ -10,6 +10,7 @@ router.post('/registrar-socio', (request, response) => {
     //Obtenemos los datos del socio comercial que vienen en el request 
     let nuevoSocio = new Socio({
         nombre: request.body.nombre,
+        logo: request.body.logo,
         codigo: request.body.codigo,
         direccion: request.body.codigo,
         estado: 1,

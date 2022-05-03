@@ -14,6 +14,7 @@ router.post('/registrar-usuario', (request, response) => {
         segundoApellido: request.body.segundoApellido,
         tipoIdentificacion: request.body.tipoIdentificacion,
         identificacion: request.body.identificacion,
+        foto: request.body.foto,
         provincia: request.body.provincia,
         canton: request.body.canton,
         distrito: request.body.distrito,
@@ -21,8 +22,11 @@ router.post('/registrar-usuario', (request, response) => {
         genero: request.body.genero,
         correo: request.body.correo,
         password: request.body.password,
+        autoresFavs: request.body.autoresFavs,
+        generosFavs: request.body.generosFavs,
         rol: 2,
         estado: 1,
+        libroFan: 0
     });
 
     //Guardamos el usuario

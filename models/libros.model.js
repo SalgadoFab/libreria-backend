@@ -12,6 +12,7 @@ const schemaLibros = new mongoose.Schema({
     isbn: { type: String, required: true, unique: true },
     nombreAutor: { type: String, required: true },
     idiomaLibro: { type: String, required: true},
+    portada: { type: String, required: true},
     fechaPublicacion: { type: Date, required: true },
     generoLibro: { type: String, required: true },
     premios: { type: String, required: false },
@@ -20,6 +21,7 @@ const schemaLibros = new mongoose.Schema({
     descuento: { type: Number, required: true },
     resennaLibro: { type: String, required: true },
     estado: { type: Number, required: true },
+    
 
 });
 
@@ -33,4 +35,4 @@ const schemaLibros = new mongoose.Schema({
 
 //Conversion del esquema al modelo
 //Parametros recibidos: (Nombre del Modelo ,  Nombre del Esquema  , Coleccion de Datos en DB )
-module.exports = mongoose.model('Libro', schemaLibros, 'libros');
+module.exports = mongoose.model('Libro', schemaLibros, 'Libros');
