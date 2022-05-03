@@ -9,6 +9,7 @@ router.post('/registrar-autor', (request, response) => {
     //Obtenemos los datos del autor que vienen en el request 
     let nuevoAutor = new autor({
         nombreAutor: request.body.nombreAutor,
+        foto: request.body.foto,
         nacimiento: request.body.nacimiento,
         defuncion: request.body.defuncion,
         nacionalidad: request.body.nacionalidad,

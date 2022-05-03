@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 //Creamos el esquema de los datos de Socio Comercial
 const schemaSocio = new mongoose.Schema({
     nombre: { type: 'String', required: true },
+    logo: { type: 'String', required: false },
     codigo: { type: 'Number', required: true },
     direccion: { type: 'String', required: true }
 });
