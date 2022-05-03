@@ -11,6 +11,7 @@ const schemaUsuario = new mongoose.Schema({
     segundoApellido: { type: String, required: true },
     tipoIdentificacion: { type: String, required: true },
     identificacion: { type: String, required: true, unique: true },
+    foto: { type: String, required: false },
     provincia: { type: String, required: true },
     canton: { type: String, required: true },
     distrito: { type: String, required: true },
@@ -18,8 +19,11 @@ const schemaUsuario = new mongoose.Schema({
     genero: { type: Number, required: true },
     correo: { type: String, required: true, unique: true },
     password: { type: String, required: true },
+    autoresFavs: { type: Array, required: false },
+    generosFavs: { type: Array, required: false },
     rol: { type: Number, required: true },
-    estado: { type: Number, required: true }
+    estado: { type: Number, required: true },
+    libroFan : { type: Number, required: true },
 });
 
 

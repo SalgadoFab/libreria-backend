@@ -8,10 +8,9 @@ const PuntosRetiro = require('../models/puntos-retiro.model') //Importamos el mo
 router.post('/registrar-punto', (request, response) => {
     //Obtenemos los datos del punto que vienen en el request 
     let nuevoPunto = new PuntosRetiro({
-        nombrePuntoRetiro : request.body.nombrePuntoRetiro,
-        socioComercial : request.body.socioComercial,
-        logoSocio : request.body.logoSocio,
-        direccion : request.body.direccion,
+        socioComercial: request.body.socioComercial,
+        //logoSocio : request.body.logoSocio,
+        direccion: request.body.direccion,
         estado: 1,
 
     });
@@ -31,7 +30,23 @@ router.post('/registrar-punto', (request, response) => {
     });
 }); //Ruta para registrar un punto de retiro
 
-router.get('/obtener-puntos', (request, response) => {}); //Ruta para obtener todos los puntos
+router.get('/obtener-puntos', (request, response) => {
+    PuntosRetiro.find((error, lista) => {
+        if (error) {
+            response.json({
+                msj: 'No se pudo listar los puntos de retiro',
+                error
+            });
+        } else {
+            response.json({
+                lista
+            });
+        }
+    });
+
+
+
+}); //Ruta para obtener todos los puntos
 
 router.get('/obtener-punto', (request, response) => {}); //Ruta para obtener un solo punto
 

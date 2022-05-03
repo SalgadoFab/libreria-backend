@@ -14,6 +14,7 @@ router.post('/registrar-libro', (request, response) => {
         isbn: request.body.isbn,
         nombreAutor: request.body.nombreAutor,
         idiomaLibro: request.body.idiomaLibro,
+        portada: request.body.portada,
         fechaPublicacion: request.body.fechaPublicacion,
         generoLibro: request.body.generoLibro,
         premios: request.body.premios,
