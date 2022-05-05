@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 //Creamos el esquema de los datos del Medio de Pago 
 const schemaMedioPago = new mongoose.Schema({
+    usuarioAsociado: { type: String, required: true },
     numeroTarjeta: { type: String, required: true },
     nombreTitular: { type: String, required: true },
     fechaExpiracion: { type: String, required: true },

@@ -8,6 +8,7 @@ const MedioPago = require('../models/medio-pago.model') //Importamos el modelo d
 router.post('/medios-pago', (request, response) => {
     //Obtenemos los datos del Medio que vienen en el request 
     let nuevoMedioPago = new MedioPago({
+        usuarioAsociado: request.body.usuarioAsociado,
         numeroTarjeta: request.body.numeroTarjeta,
         nombreTitular: request.body.nombreTitular,
         fechaExpiracion: request.body.fechaExpiracion,
@@ -31,7 +32,7 @@ router.post('/medios-pago', (request, response) => {
 }); //Ruta para registrar un medio de pago
 
 router.get('/obtener-medios-pago', (request, response) => {
-    MedioPago.find((error, lista) => {
+    MedioPago.find( (error, lista) => {
         if (error) {
             response.json({
                 msj: 'No se pudo listar medios de pago',
@@ -45,8 +46,11 @@ router.get('/obtener-medios-pago', (request, response) => {
     });
 }); //Ruta para obtener todos los medios de pago
 
-router.get('/obtener-medio-pago', (request, response) => {
-    MedioPago.find((error, lista) => {
+router.get('/obtener-medio-pago/:filtro', (request, response) => {
+
+    let email = request.params.filtro;
+
+    MedioPago.find( { usuarioAsociado: email }, function(error, lista) {
         if (error) {
             response.json({
                 msj: 'No se pudo listar medios de pago',
@@ -59,6 +63,7 @@ router.get('/obtener-medio-pago', (request, response) => {
         }
     });
 }); //Ruta para obtener un solo medio de pago
+
 
 router.put('/actualizar-medio-pago', (request, response) => {}); //Ruta para actualizar medio de pago
 
