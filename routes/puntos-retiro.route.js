@@ -34,17 +34,17 @@ router.get('/obtener-puntos', (request, response) => {
     PuntosRetiro.find((error, lista) => {
         if (error) {
             response.json({
-                msj: 'No se pudo listar los puntos de retiro',
+                mensaje: 'no se pudo consultar el listado',
                 error
+
             });
         } else {
             response.json({
+                mensaje: 'listados correctamente',
                 lista
             });
         }
     });
-
-
 
 }); //Ruta para obtener todos los puntos
 
