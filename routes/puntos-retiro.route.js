@@ -31,7 +31,22 @@ router.post('/registrar-punto', (request, response) => {
     });
 }); //Ruta para registrar un punto de retiro
 
-router.get('/obtener-puntos', (request, response) => {}); //Ruta para obtener todos los puntos
+router.get('/obtener-puntos', (request, response) => {
+    PuntosRetiro.find((error, lista) => {
+        if (error) {
+            response.json({
+                mensaje: 'no se pudo consultar el listado',
+                error
+
+            });
+        } else {
+            response.json({
+                mensaje: 'listados correctamente',
+                lista
+            });
+        }
+    });
+}); //Ruta para obtener todos los puntos
 
 router.get('/obtener-punto', (request, response) => {}); //Ruta para obtener un solo punto
 
