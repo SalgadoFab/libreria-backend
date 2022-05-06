@@ -36,6 +36,24 @@ router.post('/registrar-factura', (request, response) => {
     });
 }); 
 
+router.get('/obtener-facturas/:filtro', (request, response) => {
+
+    let correo = request.params.filtro;
+
+    factura.find( { usuarioCorreo: correo }, function(error, lista) {
+        if (error) {
+            response.json({
+                msj: 'No se pudo listar las facturas',
+                error
+            });
+        } else {
+            response.json({
+                lista
+            });
+        }
+    });
+}); //Ruta para obtener todos libros
+
 
 //Middleware
 module.exports = router;
