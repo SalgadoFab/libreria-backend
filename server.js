@@ -61,3 +61,5 @@ app.use('/api', require('./routes/libros.route')); //Rutas de libros
 app.use('/api', require('./routes/medio-pago.route')); //Rutas de medio de pago
 app.use('/api', require('./routes/direccion-envio.route')); //Rutas de direccion de envio
 app.use('/api', require('./routes/socios.route')); //Rutas de Socio comercial
+
+app.use('/api', require('./routes/factura.route')); //Facturas
