@@ -2,31 +2,16 @@
 
 const express = require('express'); //Importamos la libreria Express para tener acceso a protocolos http
 const router = express.Router(); //Define los endpoints para el manejo de datos
-const Usuario = require('../models/usuarios.model') //Importamos el modelo del usuario
+const Usuario = require('../models/parametros.model') //Importamos el modelo del usuario
 
 //Endpoints
-router.post('/registrar-parametros', (request, response) => {
-    //Obtenemos los datos del parametro que vienen en el request 
-    let nuevoParametroCantidadMinimaLibroFan = new Usuario({
-        cantidadActual: request.body.cantidadActual,
-        nuevaCantidad: request.body.nuevaCantidad
-    });
+router.post('/registrar-precio-envio', (request, response) => {
 
     let nuevoParametroPrecioActualPorEnvio = new Usuario({
         precioActual: request.body.precioActual,
         nuevaPrecio: request.body.nuevaPrecio
     });
-
-    let nuevoParametroTarifaImpuestoAplicado = new Usuario({
-        tarifaActual: request.body.tarifaActual,
-        nuevaTarifa: request.body.nuevaTarifa
-    });
-
-    let nuevoParametroTarifaDescuentoLibroFan = new Usuario({
-        descuentoActual: request.body.descuentoActual,
-        nuevaDescuento: request.body.nuevaDescuento
-    });
-
+    
     //Guardamos los parametros
     nuevoParametroCantidadMinimaLibroFan.save((error) => {
         if (error) {

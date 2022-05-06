@@ -5,13 +5,11 @@ const mongoose = require('mongoose');
 
 //Creamos el esquema de los datos del usuario 
 const puntosRetiro = new mongoose.Schema({
-    nombrePuntoRetiro : { type: String, required: true, unique: true },
     socioComercial: { type: String, required: true },
-    logoSocio: { type: String, required: true },
     direccion: { type: String, required: true },
     estado: {type: Number, required: true}
 });
 
 //Conversion del esquema al modelo
 //Parametros recibidos: (Nombre del Modelo ,  Nombre del Esquema  , Coleccion de Datos en DB )
-module.exports = mongoose.model('puntos-retiro', puntosRetiro, 'PuntosRetiro'); 
+module.exports = mongoose.model('puntos-retiro', puntosRetiro, 'PuntosDeRetiro'); 

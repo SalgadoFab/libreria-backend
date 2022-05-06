@@ -8,9 +8,7 @@ const PuntosRetiro = require('../models/puntos-retiro.model') //Importamos el mo
 router.post('/registrar-punto', (request, response) => {
     //Obtenemos los datos del punto que vienen en el request 
     let nuevoPunto = new PuntosRetiro({
-        nombrePuntoRetiro : request.body.nombrePuntoRetiro,
         socioComercial : request.body.socioComercial,
-        logoSocio : request.body.logoSocio,
         direccion : request.body.direccion,
         estado: 1,
 
