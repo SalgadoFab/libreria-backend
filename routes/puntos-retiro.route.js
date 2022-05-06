@@ -44,6 +44,7 @@ router.get('/obtener-puntos', (request, response) => {
             });
         }
     });
+
 }); //Ruta para obtener todos los puntos
 
 router.get('/obtener-punto', (request, response) => {}); //Ruta para obtener un solo punto

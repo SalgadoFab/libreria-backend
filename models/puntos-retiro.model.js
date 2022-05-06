@@ -7,9 +7,12 @@ const mongoose = require('mongoose');
 const puntosRetiro = new mongoose.Schema({
     socioComercial: { type: String, required: true },
     direccion: { type: String, required: true },
-    estado: {type: Number, required: true}
+    estado: { type: Number, required: true }
 });
 
 //Conversion del esquema al modelo
 //Parametros recibidos: (Nombre del Modelo ,  Nombre del Esquema  , Coleccion de Datos en DB )
+
 module.exports = mongoose.model('puntos-retiro', puntosRetiro, 'PuntosDeRetiro'); 
+
+
